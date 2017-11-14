@@ -1,33 +1,33 @@
-%h2 Sign up
+%h2.text-center Sign up
 = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   = devise_error_messages!
-  .field
+  .form-group
     = f.label :first_name
     %br/
-    = f.text_field :first_name, autofocus: true
-  .field
+    = f.text_field :first_name, autofocus: true, class: 'form-control'
+  .form-group
     = f.label :last_name
     %br/
-    = f.text_field :last_name
-  .field
+    = f.text_field :last_name, class: 'form-control'
+  .form-group
     = f.label :role
     %br/
-    = f.number_field :role
-  .field
+    = f.number_field :role, class: 'form-control'
+  .form-group
     = f.label :email
     %br/
-    = f.email_field :email
-  .field
+    = f.email_field :email, class: 'form-control'
+  .form-group
     = f.label :password
     - if @minimum_password_length
       %em
         (#{@minimum_password_length} characters minimum)
     %br/
-    = f.password_field :password, autocomplete: "off"
-  .field
+    = f.password_field :password, autocomplete: "off", class: 'form-control'
+  .form-group
     = f.label :password_confirmation
     %br/
-    = f.password_field :password_confirmation, autocomplete: "off"
+    = f.password_field :password_confirmation, autocomplete: "off", class: 'form-control'
   .actions
-    = f.submit "Sign up"
+    = f.submit "Sign up", class:'btn btn-default'
 = render "users/shared/links"
