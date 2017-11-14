@@ -12,7 +12,7 @@
   .form-group
     = f.label :role
     %br/
-    = f.number_field :role, class: 'form-control'
+    = f.select :role, User.roles.keys.map{|r| [r.humanize, r]}, {}, class: 'form-control'
   .form-group
     = f.label :email
     %br/

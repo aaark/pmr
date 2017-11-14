@@ -7,4 +7,6 @@ class User < ApplicationRecord
 
   has_many :project_developers
   has_many :projects, through: :project_developers
+
+  enum role: { admin: 0, developer: 1 }
 end

@@ -1,2 +1,22 @@
-<h1>Projects#index</h1>
-<p>Find me in app/views/projects/index.html.erb</p>
+.container
+  %h2.text-center Projects
+  %table.table
+    %thead
+      %tr
+        %th Project Name
+        %th Project Type
+        %th Description
+        %th Client Name
+        %th Action
+    %tbody
+      - @projects.each do |project|
+        %tr
+          %td= project.name
+          %td= project.project_type
+          %td= project.description
+          %td= project.client_name
+          %td
+            = link_to 'Edit', edit_project_path(project)
+            = link_to 'Show', project_path(project)
+  
+  = link_to 'Add New Project', new_project_path
