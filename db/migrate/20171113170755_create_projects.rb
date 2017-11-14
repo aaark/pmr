@@ -4,7 +4,7 @@ class CreateProjects < ActiveRecord::Migration[5.1]
       t.string :name
       t.string :description
       t.string :client_name
-      t.integer :type
+      t.integer :project_type
       t.integer :manager_id
      
       t.timestamps

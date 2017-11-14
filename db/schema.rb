@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20171113171829) do
     t.string "name"
     t.string "description"
     t.string "client_name"
-    t.integer "type"
+    t.integer "project_type"
     t.integer "manager_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
