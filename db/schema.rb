@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20171113171829) do
     t.integer "estimated_time"
     t.integer "status"
     t.integer "project_id"
+    t.integer "developer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["project_id"], name: "index_todos_on_project_id"

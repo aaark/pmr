@@ -7,6 +7,10 @@ class ProjectsController < ApplicationController
     @projects = Project.all
   end
 
+  def new
+    @project = Project.new
+  end
+
   def create
   	@project = Project.new(project_params.merge(manager_id: current_user.id))
   	respond_to do |format|

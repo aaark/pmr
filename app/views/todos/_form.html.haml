@@ -1,0 +1,23 @@
+= form_for @todo, url: project_todos_path(@project) do |f|
+  .form-group
+    = f.label :name
+    %br/
+    = f.text_field :name, autofocus: true, class: 'form-control'
+  .form-group
+    = f.label :complexity
+    %br/
+    = f.select :complexity, Todo.complexities.keys.map{ |c| [c.humanize, c] }, {}, class: 'form-control'
+  .form-group
+    = f.label :status
+    %br/
+    = f.select :status, Todo.statuses.keys.map { |s| [s.humanize, s] }, {}, class: 'form-control'
+  .form-group
+    = f.label :estimated_time
+    %br/
+    = f.number_field :estimated_time, class: 'form-control'
+  .form-group
+    = f.label :developer
+    %br/
+    = f.select :developer_id, @project.developers.map { |d| [d.name, d.id] }, {}, class: 'form-control'
+  .actions
+    = f.submit @todo.persisted? ? 'Update' : 'Cretae', class:'btn btn-default'

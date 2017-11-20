@@ -1,0 +1,24 @@
+.container
+  %h2.text-center Todos
+  %table.table
+    %thead
+      %tr
+        %th Name
+        %th Complexity
+        %th Estimated Time
+        %th Status
+        %th Owner
+        %th Action
+    %tbody
+      - @todos.each do |todo|
+        %tr
+          %td= todo.name
+          %td= todo.complexity
+          %td= todo.estimated_time
+          %td= todo.status
+          %td= todo.developer.try(:name)
+          %td
+            = link_to 'Edit', edit_project_todo_path(@project, todo)
+            = link_to 'Show', project_todo_path(@project, todo)
+  
+  = link_to 'Add New TODO', new_project_todo_path(@project)

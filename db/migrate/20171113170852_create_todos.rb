@@ -6,6 +6,7 @@ class CreateTodos < ActiveRecord::Migration[5.1]
       t.integer :estimated_time
       t.integer :status
       t.references :project
+      t.integer :developer_id
       t.timestamps
     end
   end
