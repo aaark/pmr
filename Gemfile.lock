@@ -116,9 +116,11 @@ GEM
     parallel (1.12.0)
     parser (2.4.0.0)
       ast (~> 2.2)
+    passenger (5.1.11)
+      rack
+      rake (>= 0.8.1)
     powerpack (0.1.1)
     public_suffix (3.0.1)
-    puma (3.10.0)
     rack (2.0.3)
     rack-test (0.7.0)
       rack (>= 1.0, < 3)
@@ -227,7 +229,7 @@ DEPENDENCIES
   haml
   jbuilder (~> 2.5)
   jquery-rails
-  puma (~> 3.7)
+  passenger
   rails (~> 5.1.0)
   rubocop
   sass-rails (~> 5.0)
